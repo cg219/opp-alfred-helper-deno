@@ -16,7 +16,7 @@ async function* generatePaths(search) {
         try {
             for await (const dir of Deno.readDir(p)) {
                 if (dir.name.includes(search) && dir.isDirectory) {
-                    acc.push(`${resolve(p), dir.name}`);
+                    acc.push(`${resolve(p, dir.name)}`);
                 }
             }
         } catch (error) {
